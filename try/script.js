@@ -64,45 +64,6 @@ document.addEventListener('DOMContentLoaded', function() {
             });
         });
     }
-
-    // Tab switching for settings page
-    const tabs = document.querySelectorAll('.tab');
-    if (tabs.length > 0) {
-        tabs.forEach(tab => {
-            tab.addEventListener('click', function() {
-                // Remove active class from all tabs and content
-                document.querySelectorAll('.tab').forEach(t => t.classList.remove('active'));
-                document.querySelectorAll('.tab-content').forEach(c => c.classList.remove('active'));
-                
-                // Add active class to clicked tab
-                this.classList.add('active');
-                
-                // Show corresponding content
-                const contentId = this.getAttribute('data-tab');
-                document.getElementById(contentId).classList.add('active');
-            });
-        });
-    }
-
-    // Password visibility toggle
-    const passwordToggles = document.querySelectorAll('.password-toggle');
-    if (passwordToggles.length > 0) {
-        passwordToggles.forEach(toggle => {
-            toggle.addEventListener('click', function() {
-                const passwordField = this.previousElementSibling;
-                const type = passwordField.getAttribute('type');
-                
-                if (type === 'password') {
-                    passwordField.setAttribute('type', 'text');
-                    this.innerHTML = '<i class="fas fa-eye-slash"></i>';
-                } else {
-                    passwordField.setAttribute('type', 'password');
-                    this.innerHTML = '<i class="fas fa-eye"></i>';
-                }
-            });
-        });
-    }
-
     // Pagination
     const paginationBtns = document.querySelectorAll('.pagination-btn');
     if (paginationBtns.length > 0) {
@@ -116,5 +77,3 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }
 });
-
-
